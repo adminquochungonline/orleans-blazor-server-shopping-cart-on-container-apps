@@ -8,8 +8,8 @@ on:
 env:
   UNIQUE_APP_NAME: orleanscart
   SILO_IMAGE_NAME: orleanscart-silo
-  AZURE_RESOURCE_GROUP_NAME: orleans-resourcegroup
-  AZURE_RESOURCE_GROUP_LOCATION: eastus
+  AZURE_RESOURCE_GROUP_NAME: hungdangacarg001
+  AZURE_RESOURCE_GROUP_LOCATION: southeastasia
 
 jobs:
   build-and-deploy:
