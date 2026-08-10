@@ -35,6 +35,15 @@ jobs:
         az bicep upgrade
         az bicep version
 
+    - name: Verify Azure context
+      run: az account show --output table
+
+    - name: Ensure resource group exists
+      run: |
+        az group create \
+          --name ${{ env.AZURE_RESOURCE_GROUP_NAME }} \
+          --location ${{ env.AZURE_RESOURCE_GROUP_LOCATION }}
+
     - name: Flex ACR bicep
       run: |
         az deployment group create \
