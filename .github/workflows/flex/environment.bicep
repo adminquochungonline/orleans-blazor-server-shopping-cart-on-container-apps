@@ -12,7 +12,7 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
   }
 }
 
-resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
+resource logs 'Microsoft.OperationalInsights/workspaces@2025-07-01' = {
   name: operationalInsightsName
   location: location
   properties: {
@@ -26,7 +26,7 @@ resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
   }
 }
 
-resource env 'Microsoft.App/managedEnvironments@2022-03-01' = {
+resource env 'Microsoft.App/managedEnvironments@2026-01-01' = {
   name: '${resourceGroup().name}env'
   location: location
   properties: {

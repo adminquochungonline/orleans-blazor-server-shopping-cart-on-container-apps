@@ -3,7 +3,7 @@ param acrName string
 param repositoryImage string
 param location string = resourceGroup().location
 
-resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' existing = {
+resource acr 'Microsoft.ContainerRegistry/registries@2025-11-01' existing = {
   name: acrName
 }
 
