@@ -2,6 +2,7 @@ param appName string
 param acrName string
 param repositoryImage string
 param location string = resourceGroup().location
+param storageAccountName string = toLower('st${uniqueString(resourceGroup().id, appName)}')
 
 resource acr 'Microsoft.ContainerRegistry/registries@2025-11-01' existing = {
   name: acrName
@@ -19,7 +20,7 @@ module env 'environment.bicep' = {
 module storageModule 'storage.bicep' = {
   name: 'orleansStorageModule'
   params: {
-    name: '${appName}storage'
+    name: storageAccountName
     location: location
   }
 }
